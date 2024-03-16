@@ -1,10 +1,5 @@
 <div class="header-container">
-    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
-        <a mat-tab-link
-           *ngFor="let link of links"
-           (click)="setActiveLink(link)"
-           [active]="isActiveLink(link)"
-           [routerLink]="link"
-        > {{link}} </a>
-    </nav>
+    <button mat-button routerLink="/About" color="primary">About</button>
+    <button mat-button routerLink="/Projects" color="primary">Projects</button>
+    <button mat-button routerLink="/GitHub" color="primary">GitHub</button>
 </div>

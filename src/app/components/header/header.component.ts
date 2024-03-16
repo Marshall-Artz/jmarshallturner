@@ -1,17 +1,17 @@
-import { Component, Input, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  templateUrl: 'header.component.html'
+  templateUrl: 'header.component.html',
+  styleUrl: './header.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent implements OnInit {
-  @Input() tabPanel: any;
-  links = ['About', 'Projects'];
-  activeLink: string = '';
+  isRaisedButton: boolean = false;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private changeDetector: ChangeDetectorRef) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.router.events
@@ -23,16 +23,9 @@ export class HeaderComponent implements OnInit {
 
   private updateActiveLink() {
     const currentRoute = this.activatedRoute.firstChild?.snapshot.routeConfig?.path;
-    this.activeLink = currentRoute && this.links.includes(currentRoute) ? currentRoute : this.links[0];
-    this.changeDetector.detectChanges();
   }
 
-  setActiveLink(link: string) {
-    this.activeLink = link;
-    this.changeDetector.detectChanges();
-  }
-
-  isActiveLink(link: string) {
-    return this.activeLink === link;
+  toggleButtonStyle() {
+    this.isRaisedButton = !this.isRaisedButton;
   }
 }
