@@ -9,7 +9,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { AboutContainerComponent } from './components/about-container/about-container.component';
 import { ProjectsContainerComponent } from './components/projects-container/projects-container.component';
 import { GithubComponent } from './components/github/github.component';
-import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { AboutCardComponent } from './components/about-container/about-card/about-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     HeaderComponent,
     AboutContainerComponent,
     ProjectsContainerComponent,
-    GithubComponent
+    GithubComponent,
+    AboutCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,14 @@
 .header-container {
-    background-color: #25292E;
     display: flex;
-    justify-content: right;
+    justify-content: left;
     align-items: center;
+
     height: 50px;
+    background-color: #010409;
+    border-bottom: 1px solid #3d444d;
 }
 
 .header-button {
-    color: #FFFFFF8C !important;
+    margin-left: 10px;
+    color: #9198A1 !important;
 }
