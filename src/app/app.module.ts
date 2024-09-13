@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AboutContainerComponent } from './components/about-container/about-container.component';
 import { ProjectsContainerComponent } from './components/projects-container/projects-container.component';
 import { GithubComponent } from './components/github/github.component';
+import { MatCard, MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,13 @@ import { GithubComponent } from './components/github/github.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideAnimationsAsync('noop')
   ],
   bootstrap: [AppComponent]
 })

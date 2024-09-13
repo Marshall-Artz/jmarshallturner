@@ -2,7 +2,12 @@
     padding: 2%;
 }
 
-.headshot {
+.headshot-card {
     width: 25%;
-    border-radius: 500px;
+}
+
+.headshot {
+    display: flex;
+    width: 100%;
+    padding-bottom: 16px;
 }
