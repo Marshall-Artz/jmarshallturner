@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatCard } from '@angular/material/card';
 
 @Component({
   selector: 'app-about-card',

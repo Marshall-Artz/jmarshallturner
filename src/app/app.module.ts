@@ -8,7 +8,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HeaderComponent } from './components/header/header.component';
 import { AboutContainerComponent } from './components/about-container/about-container.component';
 import { ProjectsContainerComponent } from './components/projects-container/projects-container.component';
-import { GithubComponent } from './components/github/github.component';
 import { MatCardModule } from '@angular/material/card';
 import { AboutCardComponent } from './components/about-container/about-card/about-card.component';
 
@@ -18,7 +17,6 @@ import { AboutCardComponent } from './components/about-container/about-card/abou
     HeaderComponent,
     AboutContainerComponent,
     ProjectsContainerComponent,
-    GithubComponent,
     AboutCardComponent
   ],
   imports: [
