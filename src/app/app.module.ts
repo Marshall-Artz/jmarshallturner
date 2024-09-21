@@ -9,15 +9,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { AboutContainerComponent } from './components/about-container/about-container.component';
 import { ProjectsContainerComponent } from './components/projects-container/projects-container.component';
 import { MatCardModule } from '@angular/material/card';
-import { AboutCardComponent } from './components/about-container/about-card/about-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AboutContainerComponent,
-    ProjectsContainerComponent,
-    AboutCardComponent
+    ProjectsContainerComponent
   ],
   imports: [
     BrowserModule,

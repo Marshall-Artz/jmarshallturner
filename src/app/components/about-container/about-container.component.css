@@ -1,16 +1,22 @@
 .about-container {
-    padding: 2%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.card-container {
-    width: 25%;
+.about-card {
+    width: 250px;
     color: #F0F6FC;
     background-color: #0D1117;
     border: 1px solid #3d444d;
+
 }
 
 .card-title {
     margin: 16px;
+}
+
+.card-image {
+    width: 100%;
 }
 
 .card-content {
