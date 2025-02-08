@@ -1,12 +1,8 @@
 .about-container {
-    padding: 2%;
-}
-
-.card-container {
-    width: 25%;
-    color: #F0F6FC;
-    background-color: #0D1117;
-    border: 1px solid #3d444d;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
 }
 
 .card-title {

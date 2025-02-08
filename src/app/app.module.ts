@@ -10,6 +10,7 @@ import { AboutContainerComponent } from './components/about-container/about-cont
 import { ProjectsContainerComponent } from './components/projects-container/projects-container.component';
 import { MatCardModule } from '@angular/material/card';
 import { AboutCardComponent } from './components/about-container/about-card/about-card.component';
+import { ResumeCardComponent } from './components/about-container/resume-card/resume-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AboutCardComponent } from './components/about-container/about-card/abou
     HeaderComponent,
     AboutContainerComponent,
     ProjectsContainerComponent,
-    AboutCardComponent
+    AboutCardComponent,
+    ResumeCardComponent
   ],
   imports: [
     BrowserModule,
