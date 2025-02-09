@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrl: './resume-card.component.css'
 })
 export class ResumeCardComponent {
-
 }
