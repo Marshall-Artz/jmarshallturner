@@ -4,6 +4,7 @@
 }
 
 .about-container {
+    height: 100%;
     padding: 16px;
     display: flex;
     justify-content: center;
