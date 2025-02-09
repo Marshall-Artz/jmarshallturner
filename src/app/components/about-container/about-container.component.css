@@ -1,21 +1,39 @@
 :host {
     display: block;
     height: 100%;
+    min-height: 0;
 }
 
 .about-container {
     height: 100%;
-    padding: 16px;
     display: flex;
-    justify-content: center;
+    padding: 16px;
     gap: 16px;
+    box-sizing: border-box;
 }
 
 app-about-card {
-    width: 25%;
+    flex: 1;
+    min-width: 0;
 }
 
 app-resume-card {
-    width: 75%;
-    min-height: fit-content;
+    flex: 3;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    app-about-card,
+    app-resume-card {
+        flex: none;
+    }
+
+    app-resume-card {
+        height: 400px;
+    }
 }
