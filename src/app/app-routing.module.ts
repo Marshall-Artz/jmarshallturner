@@ -4,9 +4,9 @@ import { AboutContainerComponent } from './components/about-container/about-cont
 import { ProjectsContainerComponent } from './components/projects-container/projects-container.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'About', pathMatch: 'full'},
-  {path: 'About', component: AboutContainerComponent},
-  {path: 'Projects', component: ProjectsContainerComponent},
+  {path: '', redirectTo: 'about', pathMatch: 'full'},
+  {path: 'about', component: AboutContainerComponent},
+  {path: 'projects', component: ProjectsContainerComponent},
 ];
 
 @NgModule({
