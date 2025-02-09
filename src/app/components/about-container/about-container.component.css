@@ -2,17 +2,14 @@
     width: 100%;
     padding: 16px;
     display: flex;
-    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
 }
 
-.card-title {
-    margin: 16px;
+app-about-card {
+    width: 25%;
 }
 
-.card-image {
-    width: 100%;
-}
-
-.card-content {
-    margin: 16px;
+app-resume-card {
+    width: 25%;
 }

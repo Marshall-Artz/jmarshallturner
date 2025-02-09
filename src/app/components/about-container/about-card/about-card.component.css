@@ -1,19 +1,17 @@
-.about-container {
-    padding: 2%;
-}
-
 .card-title {
     margin: 16px;
-    text-align: center;
-    font-weight: 500;
+}
+
+.card-image {
+    width: 100%;
 }
 
 .card-content {
     margin: 16px;
 }
 
-.headshot {
-    border-radius: 50%;
-    margin: 16px;
-    border-width: 1px solid #3d444d;
+.mdc-card {
+    color: #F0F6FC;
+    background-color: #0D1117 !important;
+    border: 1px solid #3d444d !important;
 }

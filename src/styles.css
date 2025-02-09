@@ -1,10 +1,2 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mdc-card {
-    width: 25%;
-    color: #F0F6FC !important;
-    background: #3d444d !important;
-    background-color: #0D1117 !important;
-    border: 1px solid #3d444d !important;
-}
