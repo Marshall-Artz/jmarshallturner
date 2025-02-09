@@ -7,8 +7,8 @@
 .about-container {
     height: 100%;
     display: flex;
-    padding: 16px;
-    gap: 16px;
+    padding: 25px;
+    gap: 25px;
     box-sizing: border-box;
 }
 
@@ -18,7 +18,7 @@ app-about-card {
 }
 
 app-resume-card {
-    flex: 3;
+    flex: 2;
     min-width: 0;
 }
 
@@ -34,6 +34,7 @@ app-resume-card {
     }
 
     app-resume-card {
-        height: 400px;
+        width: 100%;
+        aspect-ratio: 1 / 1.1;
     }
 }
