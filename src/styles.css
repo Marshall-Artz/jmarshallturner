@@ -1,6 +1,15 @@
-html, body { height: 100%; }
-body {
-    background-color: #010409;
+html, body {
+    height: 100%;
     margin: 0;
+    padding: 0;
+    background-color: #010409;
+}
+
+body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-root {
+    display: block;
+    height: 100%;
 }

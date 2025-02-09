@@ -1,0 +1,20 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+.app-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+app-header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    height: 50px;
+    border-bottom: 1px solid #3d444d;
+}
+
