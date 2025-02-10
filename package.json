@@ -2,8 +2,8 @@
   "name": "jmarshallturner-web",
   "version": "0.0.0",
   "scripts": {
-    "gh-build": "ng build --base-href=/https://marshall-artz.github.io/jmarshallturner/",
-    "deploy": "ng deploy --base-href=/https://marshall-artz.github.io/jmarshallturner/",
+    "gh-build": "ng build --base-href https://marshall-artz.github.io/jmarshallturner/",
+    "deploy": "ng deploy --base-href https://marshall-artz.github.io/jmarshallturner/",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
