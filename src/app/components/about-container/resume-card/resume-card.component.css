@@ -11,3 +11,14 @@
     width: 100%;
     height: 100%;
 }
+
+.open-resume-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .open-resume-button {
+        display: block;
+        background-color: #0969DA;
+    }
+}

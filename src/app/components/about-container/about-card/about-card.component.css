@@ -22,28 +22,19 @@ ul > li {
     text-indent: -1.2em;
 }
 
-ul > li::before {
+ul > li:nth-child(1)::before {
     content: "📌";
     padding: 8px;
 }
 
-ul > li > ul {
-    padding-left: 20px;
-}
-
-ul > li > ul > li:nth-child(1)::before {
+ul > li:nth-child(2)::before {
     content: "🏠";
-    padding-right: 8px;
+    padding: 8px;
 }
 
-ul > li > ul > li:nth-child(2)::before {
+ul > li:nth-child(3)::before {
     content: "📈";
-    padding-right: 8px;
-}
-
-.bullet {
-    margin-top: 10px;
-    color: #F0F6FC;
+    padding: 8px;
 }
 
 .mdc-card {
@@ -54,4 +45,9 @@ ul > li > ul > li:nth-child(2)::before {
     color: #F0F6FC;
     background-color: #0D1117 !important;
     border: 1px solid #3d444d !important;
+}
+
+.contact-button {
+    width: 100%;
+    background-color: #0969DA;
 }

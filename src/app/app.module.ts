@@ -11,6 +11,7 @@ import { ProjectsContainerComponent } from './components/projects-container/proj
 import { MatCardModule } from '@angular/material/card';
 import { AboutCardComponent } from './components/about-container/about-card/about-card.component';
 import { ResumeCardComponent } from './components/about-container/resume-card/resume-card.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ResumeCardComponent } from './components/about-container/resume-card/re
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   providers: [
     provideClientHydration(),
