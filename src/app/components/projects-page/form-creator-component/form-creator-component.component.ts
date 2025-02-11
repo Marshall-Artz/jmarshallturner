@@ -24,6 +24,7 @@ export class FormCreatorComponentComponent {
   CLIENT_ID = environment.googleClientId;
 
   async createForm() {
+    console.log("BUTTON HIT");
     // Load and init Google API
     await new Promise((resolve) => {
     gapi.load('client:auth2', async () => {
