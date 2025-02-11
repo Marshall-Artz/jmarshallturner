@@ -30,19 +30,28 @@ export class FormCreatorComponentComponent {
   }
 
   private async createGoogleForm(token: string) {
+    const today = new Date();
+    const daysUntilSunday = (7 - today.getDay()) % 7;
+    const nextSunday = new Date(today);
+    nextSunday.setDate(today.getDate() + daysUntilSunday);
 
+    const formattedDate = `${nextSunday.getMonth() + 1}/${nextSunday.getDate()}/${nextSunday.getFullYear()}`;
+
+    // Initial form creation
     const initialForm = {
       info: {
-        title: 'Lead Sunday Form'
+        documentTitle: `Lead Sunday ${formattedDate}`,
+        title: `Lead Sunday ${formattedDate}`
       }
     }
 
+    // Form update using batch update
     const formUpdate = {
       requests: [
         {
           updateFormInfo: {
             info: {
-              description: "Your form description"
+              description: "If the second or third choice votes are empty, that can mean you won’t attend if your other choices don’t win."
             },
             updateMask: "description"
           }
@@ -50,24 +59,86 @@ export class FormCreatorComponentComponent {
         {
           createItem: {
             item: {
-              title: "Question 1",
-              description: "Question description",
+              title: "First Name (don't duplicate votes):",
               questionItem: {
                 question: {
                   required: true,
-                  choiceQuestion: {
-                    type: "RADIO",
-                    options: [
-                      { value: "Option 1" },
-                      { value: "Option 2" }
-                    ]
+                  textQuestion: {
+                    paragraph: false  // false for short answer, true for paragraph
                   }
                 }
               }
             },
             location: { index: 0 }
           }
-        }
+        },
+        {
+          createItem: {
+            item: {
+              title: "Last Name (so I know who you are if you’re new):",
+              questionItem: {
+                question: {
+                  required: true,
+                  textQuestion: {
+                    paragraph: false
+                  }
+                }
+              }
+            },
+            location: { index: 1 }
+          }
+        },
+        {
+          createItem: {
+            item: {
+              title: "First Place Choice",
+              questionItem: {
+                question: {
+                  required: true,
+                  choiceQuestion: {
+                    type: "RADIO",
+                    options: [{ value: "Grapevine" }, { value: "Plano" }, { value: "Design District"}]
+                  }
+                }
+              }
+            },
+            location: { index: 2 }
+          }
+        },
+        {
+          createItem: {
+            item: {
+              title: "Second Place Choice",
+              questionItem: {
+                question: {
+                  required: false,
+                  choiceQuestion: {
+                    type: "RADIO",
+                    options: [{ value: "Grapevine" }, { value: "Plano" }, { value: "Design District"}]
+                  }
+                }
+              }
+            },
+            location: { index: 3 }
+          }
+        },
+        {
+          createItem: {
+            item: {
+              title: "Third Place Choice",
+              questionItem: {
+                question: {
+                  required: false,
+                  choiceQuestion: {
+                    type: "RADIO",
+                    options: [{ value: "Grapevine" }, { value: "Plano" }, { value: "Design District"}]
+                  }
+                }
+              }
+            },
+            location: { index: 4 }
+          }
+        },
       ]
     }
     
@@ -83,20 +154,6 @@ export class FormCreatorComponentComponent {
       
       const result = await response.json();
       const formId = result.formId;
-    
-      // Now update the form
-      const formUpdate = {
-        requests: [
-          {
-            updateFormInfo: {
-              info: {
-                description: "Your form description"
-              },
-              updateMask: "description"
-            }
-          }
-        ]
-      };
     
       await fetch(`https://forms.googleapis.com/v1/forms/${formId}:batchUpdate`, {
         method: 'POST',
