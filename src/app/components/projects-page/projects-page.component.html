@@ -1,0 +1,9 @@
+<div class="projects-container">
+    <mat-button-toggle-group [(value)]="selectedProject">
+        <mat-button-toggle value="gameOfLife">The Game of Life</mat-button-toggle>
+        <mat-button-toggle value="leadSundayForm">Climbing Form Generator</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <p *ngIf="selectedProject === 'gameOfLife'" style="color: white;">TEST1</p>
+    <p *ngIf="selectedProject === 'leadSundayForm'" style="color: white;">TEST2</p>
+</div>

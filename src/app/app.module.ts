@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 import { HeaderComponent } from './components/header/header.component';
-import { AboutContainerComponent } from './components/about-container/about-container.component';
-import { ProjectsContainerComponent } from './components/projects-container/projects-container.component';
-import { MatCardModule } from '@angular/material/card';
-import { AboutCardComponent } from './components/about-container/about-card/about-card.component';
-import { ResumeCardComponent } from './components/about-container/resume-card/resume-card.component';
-import { MatIconModule } from '@angular/material/icon';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
+import { AboutCardComponent } from './components/about-page/about-card/about-card.component';
+import { ResumeCardComponent } from './components/about-page/resume-card/resume-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AboutContainerComponent,
-    ProjectsContainerComponent,
+    AboutPageComponent,
+    ProjectsPageComponent,
     AboutCardComponent,
     ResumeCardComponent
   ],
@@ -27,7 +29,8 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonToggleModule
   ],
   providers: [
     provideClientHydration(),
