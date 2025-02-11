@@ -1,0 +1,29 @@
+:host {
+    display: block;
+    height: 100%;
+    min-height: 0;
+    padding: 25px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 25px;
+    align-items: center;
+}
+
+.mat-button-toggle-group {
+    border: none;
+}
+
+.mat-button-toggle {
+    color: #9a98a1;
+    background-color: #010409;
+    border: 1px solid #3d444d !important;
+}
+
+.mat-button-toggle-checked {
+    color: #9a98a1 !important;
+    background-color: #212830 !important;
+}

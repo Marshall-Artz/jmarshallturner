@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutContainerComponent } from './components/about-container/about-container.component';
-import { ProjectsContainerComponent } from './components/projects-container/projects-container.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'about', pathMatch: 'full'},
-  {path: 'about', component: AboutContainerComponent},
-  // {path: 'projects', component: ProjectsContainerComponent},
+  {path: 'about', component: AboutPageComponent},
+  {path: 'projects', component: ProjectsPageComponent},
 ];
 
 @NgModule({
