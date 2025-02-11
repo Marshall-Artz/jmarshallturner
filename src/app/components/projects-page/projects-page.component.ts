@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './projects-page.component.css'
 })
 export class ProjectsPageComponent {
-  selectedProject: string = 'gameOfLife';
+  selectedProject: string = 'leadSundayForm';
 }
