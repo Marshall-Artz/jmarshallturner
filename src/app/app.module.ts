@@ -14,6 +14,7 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
 import { AboutCardComponent } from './components/about-page/about-card/about-card.component';
 import { ResumeCardComponent } from './components/about-page/resume-card/resume-card.component';
+import { FormCreatorComponentComponent } from './components/projects-page/form-creator-component/form-creator-component.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ResumeCardComponent } from './components/about-page/resume-card/resume-
     AboutPageComponent,
     ProjectsPageComponent,
     AboutCardComponent,
-    ResumeCardComponent
+    ResumeCardComponent,
+    FormCreatorComponentComponent
   ],
   imports: [
     BrowserModule,
