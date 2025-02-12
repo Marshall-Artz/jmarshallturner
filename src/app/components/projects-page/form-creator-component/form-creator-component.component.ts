@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from './../../../../environments/environment';
 
 declare const google: any;
-const SCOPES = [
-  'https://www.googleapis.com/auth/forms.body',
-  'https://www.googleapis.com/auth/forms.responses.readonly'
-];
 
 @Component({
   selector: 'app-form-creator-component',
@@ -32,8 +28,7 @@ export class FormCreatorComponentComponent {
   private async createGoogleForm(token: string) {
     const today = new Date();
     const daysUntilSunday = (7 - today.getDay()) % 7;
-    const nextSunday = new Date(today);
-    nextSunday.setDate(today.getDate() + daysUntilSunday);
+    const nextSunday = new Date(today.getDate() + daysUntilSunday);
 
     const formattedDate = `${nextSunday.getMonth() + 1}/${nextSunday.getDate()}/${nextSunday.getFullYear()}`;
 
