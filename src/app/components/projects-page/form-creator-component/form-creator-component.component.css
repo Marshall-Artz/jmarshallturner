@@ -3,12 +3,16 @@
     color: #F0F6FC;
 }
 
+.google-form-text {
+    text-align: center;
+}
+
 .google-form-button {
     background-color: #0969DA;
 }
 
 .mdc-card {
-    width: 100%;
+    width: 400px;
     height: fit-content;
     padding: 16px;
     gap: 16px;
