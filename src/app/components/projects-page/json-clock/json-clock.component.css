@@ -1,0 +1,36 @@
+pre {
+    background-color: #1e1e1e !important; /* Dark VS Code-like background */
+    font-family: "Courier New", monospace !important;
+    padding: 15px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    overflow-x: auto !important; /* Enable horizontal scrolling */
+    white-space: pre-wrap; /* Ensures formatting stays intact */
+    color: unset !important; /* Reset text color */
+}
+
+/* Apply specific color only to the elements that need syntax highlighting */
+pre code {
+    color: unset !important; /* Ensure the <code> itself doesn't apply default text color */
+}
+
+/* Syntax Highlighting */
+.json-key {
+    color: #9cdcfe !important; /* Light blue for keys */
+}
+
+.json-string {
+    color: #ce9178 !important; /* Light red-orange for strings */
+}
+
+.json-number {
+    color: #b5cea8 !important; /* Light green for numbers */
+}
+
+.json-boolean {
+    color: #569cd6 !important; /* Light blue for true/false */
+}
+
+.json-null {
+    color: #c586c0 !important; /* Light purple for null */
+}
