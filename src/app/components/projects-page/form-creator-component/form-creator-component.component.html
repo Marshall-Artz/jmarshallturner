@@ -6,12 +6,13 @@
         pasting, changing the date and sending the link was
         annoying so I automated it with a button click!
     </p>
+    <mat-spinner *ngIf="isLoading()" class="google-form-spinner"></mat-spinner>
     <button
         button
         mat-fab
         extended
         class="google-form-button"
-        (click)="createForm()">
+        (click)="initializeGoogleFormsAuth()">
             Create Lead Sunday Form
     </button>
 </mat-card>

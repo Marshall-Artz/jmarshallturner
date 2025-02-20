@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from './../../../../environments/environment';
+import { Component, signal } from '@angular/core';
+import { googleFormInfo } from '@/assets/googleForm';
+import { GoogleApiServiceService } from '@/app/services/google-api-service.service';
 
 declare const google: any;
 
@@ -9,20 +10,19 @@ declare const google: any;
   styleUrl: './form-creator-component.component.css'
 })
 export class FormCreatorComponentComponent {
-  CLIENT_ID = environment.googleClientId;
+  isLoading = signal(false);
+  constructor(private googleApiService: GoogleApiServiceService) { }
 
-  public async createForm() {
-    const tokenClient = google.accounts.oauth2.initTokenClient({
-      client_id: this.CLIENT_ID,
-      scope: 'https://www.googleapis.com/auth/forms.body',
-      callback: (response: any) => {
-        if (response.access_token) {
-          this.createGoogleForm(response.access_token);
-        }
-      }
-    });
-  
-    tokenClient.requestAccessToken();
+  public async initializeGoogleFormsAuth() {
+    this.isLoading.set(true);
+    try {
+      const access_token = await this.googleApiService.requestGoogleFormsOAuthToken();
+      await this.createGoogleForm(access_token);
+    } catch (error) {
+      alert(error);
+    } finally {
+      this.isLoading.set(false);
+    }
   }
 
   private async createGoogleForm(token: string) {
@@ -41,102 +41,8 @@ export class FormCreatorComponentComponent {
       }
     }
 
-    // Form update using batch update
-    const formUpdate = {
-      requests: [
-        {
-          updateFormInfo: {
-            info: {
-              description: "If the second or third choice votes are empty, that can mean you won’t attend if your other choices don’t win."
-            },
-            updateMask: "description"
-          }
-        },
-        {
-          createItem: {
-            item: {
-              title: "First Name (don't duplicate votes):",
-              questionItem: {
-                question: {
-                  required: true,
-                  textQuestion: {
-                    paragraph: false  // false for short answer, true for paragraph
-                  }
-                }
-              }
-            },
-            location: { index: 0 }
-          }
-        },
-        {
-          createItem: {
-            item: {
-              title: "Last Name (so I know who you are if you’re new):",
-              questionItem: {
-                question: {
-                  required: true,
-                  textQuestion: {
-                    paragraph: false
-                  }
-                }
-              }
-            },
-            location: { index: 1 }
-          }
-        },
-        {
-          createItem: {
-            item: {
-              title: "First Place Choice",
-              questionItem: {
-                question: {
-                  required: true,
-                  choiceQuestion: {
-                    type: "RADIO",
-                    options: [{ value: "Grapevine" }, { value: "Plano" }, { value: "Design District"}]
-                  }
-                }
-              }
-            },
-            location: { index: 2 }
-          }
-        },
-        {
-          createItem: {
-            item: {
-              title: "Second Place Choice",
-              questionItem: {
-                question: {
-                  required: false,
-                  choiceQuestion: {
-                    type: "RADIO",
-                    options: [{ value: "Grapevine" }, { value: "Plano" }, { value: "Design District"}]
-                  }
-                }
-              }
-            },
-            location: { index: 3 }
-          }
-        },
-        {
-          createItem: {
-            item: {
-              title: "Third Place Choice",
-              questionItem: {
-                question: {
-                  required: false,
-                  choiceQuestion: {
-                    type: "RADIO",
-                    options: [{ value: "Grapevine" }, { value: "Plano" }, { value: "Design District"}]
-                  }
-                }
-              }
-            },
-            location: { index: 4 }
-          }
-        },
-      ]
-    }
+    // Form information
+    const updateForm = googleFormInfo;
     
     try {
       const response = await fetch('https://forms.googleapis.com/v1/forms', {
@@ -157,7 +63,7 @@ export class FormCreatorComponentComponent {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formUpdate)
+        body: JSON.stringify(updateForm)
       });
     
       window.open(`https://docs.google.com/forms/d/${formId}/edit`, '_blank');
