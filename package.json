@@ -2,8 +2,8 @@
   "name": "jmarshallturner-web",
   "version": "0.0.0",
   "scripts": {
-    "gh-build": "ng build --base-href https://www.jmarshallturner.com/",
-    "deploy": "ng deploy --base-href https://www.jmarshallturner.com/",
+    "gh-build": "ng build --cname=https://www.jmarshallturner.com/",
+    "deploy": "ng deploy --cname=https://www.jmarshallturner.com/",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
