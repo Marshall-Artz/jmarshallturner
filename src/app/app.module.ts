@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,12 +35,12 @@ import { FormCreatorComponentComponent } from './components/projects-page/form-c
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync(),
-    provideAnimationsAsync('noop')
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,9 @@
 # JmarshallturnerWeb
 
+This is just my personal website I built in angular and angular-material components. I would like to expand it but right now
+it just shows me, my resume, and then a page that I use to create a google form quickly cause I was annoyed with doing
+it manually each time.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
 
 ## Development server

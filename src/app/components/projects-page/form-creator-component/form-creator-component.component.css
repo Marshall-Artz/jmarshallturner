@@ -1,17 +1,11 @@
-.google-form-title {
-    text-align: center;
-    color: #F0F6FC;
-}
-
-.google-form-text {
-    text-align: center;
-}
-
 .google-form-button {
     background-color: #0969DA;
 }
 
-.mdc-card {
+.lead-sunday-card {
+    display: flex;
+    text-align: center;
+    align-items: center;
     width: 300px;
     height: fit-content;
     padding: 16px;

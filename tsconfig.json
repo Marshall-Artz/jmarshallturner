@@ -23,7 +23,11 @@
       "ES2022",
       "dom"
     ],
-    "types": ["google.accounts"]
+    "types": ["google.accounts"],
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
