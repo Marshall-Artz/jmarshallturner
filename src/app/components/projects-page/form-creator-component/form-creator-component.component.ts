@@ -14,7 +14,6 @@ export class FormCreatorComponentComponent {
   constructor(private googleApiService: GoogleApiServiceService) { }
 
   public async initializeGoogleFormsAuth() {
-    this.isLoading.set(true);
     try {
       const access_token = await this.googleApiService.requestGoogleFormsOAuthToken();
       await this.createGoogleForm(access_token);
@@ -26,6 +25,8 @@ export class FormCreatorComponentComponent {
   }
 
   private async createGoogleForm(token: string) {
+    this.isLoading.set(true); // Set loading state to true
+
     const today = new Date();
     const daysUntilSunday = (7 - today.getDay()) % 7;
     const nextSunday = new Date(today);
