@@ -2,8 +2,7 @@
   "name": "jmarshallturner-web",
   "version": "0.0.0",
   "scripts": {
-    "gh-build": "ng build --cname=www.jmarshallturner.com/",
-    "deploy": "ng deploy --cname=www.jmarshallturner.com/",
+    "deploy": "npx angular-cli-ghpages --dir=dist/jmarshallturner-web/browser --cname=www.jmarshallturner.com",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
