@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-resume-card',
@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './resume-card.component.css'
 })
 export class ResumeCardComponent {
+  isMobile = window.innerWidth <= 1100;
+
+  openResume() {
+    window.open('assets/JMarshallTurner_resume.pdf', '_blank');
+  }
 }

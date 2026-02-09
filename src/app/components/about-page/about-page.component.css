@@ -46,6 +46,7 @@ app-resume-card {
     app-resume-card {
         width: 100%;
         max-width: 500px;
-        aspect-ratio: 1 / 1.37;
+        aspect-ratio: auto;
+        height: auto;
     }
 }
