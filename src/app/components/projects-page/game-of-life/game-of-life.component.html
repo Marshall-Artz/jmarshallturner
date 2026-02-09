@@ -1,0 +1,38 @@
+<!-- game-of-life.component.html -->
+<div class="game-container">
+    <mat-card class="info-card" appearance="outlined">
+        <h2>Conway's Game of Life</h2>
+        <p>
+            A cellular automaton where cells live, die, or reproduce based on simple rules.
+            Click or drag to draw living cells, then hit play to watch patterns evolve.
+        </p>
+        <h3>Rules:</h3>
+        <ul>
+            <li>Any live cell with 2 or 3 neighbors survives</li>
+            <li>Any dead cell with exactly 3 neighbors becomes alive</li>
+            <li>All other cells die or stay dead</li>
+        </ul>
+    </mat-card>
+
+    <div class="top-controls">
+        <button mat-raised-button (click)="randomize()">Random</button>
+        <button mat-raised-button (click)="clear()">Clear</button>
+    </div>
+
+    <div class="grid" (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()">
+        <div class="row" *ngFor="let row of grid; let i = index">
+            <button mat-icon-button *ngFor="let cell of row; let j = index" [class.alive]="cell"
+                (mousedown)="onMouseDown(i, j)" (mouseenter)="onMouseEnter(i, j)">
+            </button>
+        </div>
+    </div>
+
+    <div class="bottom-controls">
+        <button mat-icon-button (click)="isRunning ? stop() : start()">
+            <mat-icon>{{ isRunning ? 'pause' : 'play_arrow' }}</mat-icon>
+        </button>
+        <button mat-icon-button (click)="stepForward()">
+            <mat-icon>skip_next</mat-icon>
+        </button>
+    </div>
+</div>

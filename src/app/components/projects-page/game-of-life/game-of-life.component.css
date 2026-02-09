@@ -1,0 +1,130 @@
+/* Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Info Card */
+.info-card {
+    max-width: 450px;
+    padding: 20px;
+    color: #F0F6FC;
+    background-color: #0D1117 !important;
+    border: 1px solid #3d444d !important;
+}
+
+.info-card h2 {
+    text-align: center;
+    margin: 0 0 16px 0;
+    color: #F0F6FC;
+}
+
+.info-card h3 {
+    margin: 16px 0 8px 0;
+    text-align: left;
+    color: #F0F6FC;
+}
+
+.info-card p {
+    margin: 0;
+    line-height: 1.6;
+    text-align: left;
+    color: #C9D1D9;
+}
+
+.info-card ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    text-align: left;
+    color: #C9D1D9;
+}
+
+.info-card li {
+    margin-bottom: 4px;
+}
+
+/* Top Controls */
+.top-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.top-controls button {
+    background-color: #0969DA;
+    color: white;
+    padding: 11px 16px;
+    font-size: 16px;
+    min-height: 48px;
+    line-height: 24px;
+}
+
+/* Grid */
+.grid {
+    display: inline-flex;
+    flex-direction: column;
+    border: 1px solid #3d444d;
+}
+
+.row {
+    display: flex;
+}
+
+.row button {
+    width: 30px;
+    height: 30px;
+    min-width: 12px;
+    padding: 0;
+    background-color: #0D1117;
+    border: none;
+    border-right: 1px solid #3d444d;
+    border-bottom: 1px solid #3d444d;
+    border-radius: 0;
+}
+
+.row button:last-child {
+    border-right: none;
+}
+
+.row:last-child button {
+    border-bottom: none;
+}
+
+.row button.alive {
+    background-color: #58A6FF;
+}
+
+/* Bottom Controls */
+.bottom-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-controls button {
+    color: #0969DA;
+}
+
+.bottom-controls mat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    width: 32px;
+    height: 32px;
+}
+
+/* Mobile */
+@media (max-width: 1100px) {
+    .info-card {
+        max-width: 350px;
+    }
+
+    .row button {
+        width: 30px;
+        height: 30px;
+    }
+}

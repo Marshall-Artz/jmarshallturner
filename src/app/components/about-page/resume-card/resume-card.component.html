@@ -1,11 +1,10 @@
-<mat-card appearance="outlined">
-    <iframe class="pdf" src="assets/JMarshallTurner.pdf#view=Fit&zoom=page-fit" type="application/pdf"></iframe>
+<mat-card class="pdf-card" appearance="outlined" *ngIf="!isMobile">
+    <iframe class="pdf" src="assets/JMarshallTurner_resume.pdf#view=Fit&zoom=page-fit" type="application/pdf"></iframe>
 </mat-card>
 <button
-    button
     mat-fab
     extended
     class="open-resume-button"
-    onclick="window.open('assets/JMarshallTurner.pdf', '_blank')">
-        Open in new tab
+    (click)="openResume()">
+        Open Resume
 </button>

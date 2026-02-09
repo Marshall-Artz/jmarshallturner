@@ -18,6 +18,7 @@ import { ProjectsPageComponent } from './components/projects-page/projects-page.
 import { AboutCardComponent } from './components/about-page/about-card/about-card.component';
 import { ResumeCardComponent } from './components/about-page/resume-card/resume-card.component';
 import { FormCreatorComponentComponent } from './components/projects-page/form-creator-component/form-creator-component.component';
+import { GameOfLifeComponent } from './components/projects-page/game-of-life/game-of-life.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormCreatorComponentComponent } from './components/projects-page/form-c
     ProjectsPageComponent,
     AboutCardComponent,
     ResumeCardComponent,
-    FormCreatorComponentComponent
+    FormCreatorComponentComponent,
+    GameOfLifeComponent
   ],
   imports: [
     BrowserModule,
